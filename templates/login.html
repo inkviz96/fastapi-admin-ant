@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <style>
+        body {
+            height: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .allCenter {
+            align-content: center;
+        }
+
+        .login {
+            width: 710px;
+            height: 230px;
+            padding: 15px;
+            border-right-color: black;
+            border-left-color: black;
+            border-style: solid;
+            border-width: 0px 3px 3px 3px;
+            border-bottom-color: black;
+            text-align: center;
+        }
+
+        .loginHead {
+            width: 735px;
+            background-color: cornflowerblue;
+            height: 35px;
+            padding-top: 5px;
+            padding-left: 5px;
+            font-size: 25px;
+            border-width: 3px;
+            border-style: solid;
+            border-color: cornflowerblue;
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+
+        input[type=text], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
+        input[type=password], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
+        input[type=submit] {
+          width: 100%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+        .failed {
+            text-align: center;
+            color: red;
+            height: 50px;
+            width: 280px;
+            font-size: 15px;
+            background-color: rgb(255, 0, 0, 0.3);
+            border-style: solid;
+            border-color: red;
+            border-radius: 15px;
+            padding-top: 25px;
+            margin: 35px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="allCenter">
+        {% if not result %}
+            <div class="failed">Failed username or password</div>
+        {% endif %}
+        <div class="loginHead">Login</div>
+        <div class="login">
+            <form method="post">
+                <label for="username">User Name</label>
+                <input type="text" id="username" name="username" placeholder="Your name..">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Your password..">
+
+                <input type="submit" value="Submit">
+              </form>
+        </div>
+    </div>
+</body>
+</html>
